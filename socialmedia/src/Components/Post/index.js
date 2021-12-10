@@ -37,7 +37,7 @@ const Post = () => {
         await axios.post(
           `${process.env.REACT_APP_BASE_URL}/createPosts`,
           {
-            img: post, 
+            img: "https://graphicriver.img.customer.envatousercontent.com/files/323806823/Avatar_preview_envato.jpg?auto=compress%2Cformat&fit=crop&crop=top&w=590&h=590&s=5fb7fcf691c84523827c9b478b80092b", 
             dec: post,
           },
           {
@@ -63,11 +63,13 @@ const Post = () => {
       </div>
       <div>
         <input
+        type="text"
+        name="post"
           onChange={(e) => setPost(e.target.value)}
-          placeholder="add Tasks"
+          placeholder="add Post"
         />
-        <button className="addBtn" onClick={addNewPost}>
-          Add New Task
+        <button className="addBtn" onClick={addNewPost} style={{color: "white" , fontSize: "20px"}}>
+         +
         </button>
       </div>
       <div className="posts">
@@ -76,6 +78,7 @@ const Post = () => {
             <div key={item._id}>
               <div className="post">
                 <img id="image" src={item.img}></img>
+                <h2>{item.dec}</h2>
               </div>
             </div>
           ))}
