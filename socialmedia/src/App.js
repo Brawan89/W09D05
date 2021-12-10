@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Register from './Components/Registere';
+import Login from './Components/Login';
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
        <Routes>
    
       <Route exact path="/register" element={<Register />} />
+      <Route exact path="/login" element={<Login />} />
+
     </Routes>
     </div>
   );
