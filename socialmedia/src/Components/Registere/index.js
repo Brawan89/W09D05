@@ -30,6 +30,7 @@ const Register = () => {
 
   return (
     <>
+    <div className="top">
       <div className="container">
         <div className="brand-logo"></div>
         <div className="brand-title">Register</div>
@@ -63,6 +64,7 @@ const Register = () => {
             Register
           </button>
         </div>
+      </div>
       </div>
     </>
   );
