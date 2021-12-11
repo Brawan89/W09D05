@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import "./style.css";
 // import { useNavigate } from "react-router-dom";
-import Post from "../Post";
+import Posts from "../Posts";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   // const navigate = useNavigate();
@@ -40,35 +41,37 @@ const Login = () => {
     }
   };
 
-
-
-  return (
+  
+ return (
     <>
-    {!state.signIn.token ? (
+      {!state.signIn.token ? (
         <>
-      <div className="top">
-        <div className="container">
-          <div className="brand-logo"></div>
-          <div className="inputs">
-            <input
-              type="text"
-              name="email"
-              placeholder="email"
-              onChange={(e) => setUserName(e.target.value)}
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button onClick={login}>login</button>
+          <div className="top">
+            <div className="container">
+              <div className="brand-logo"></div>
+              <div className="inputs">
+                <input
+                  type="text"
+                  name="email"
+                  placeholder="email"
+                  onChange={(e) => setUserName(e.target.value)}
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button onClick={login}>login</button>
+                <p className="forgotPassword" /*onClick={forgPass}*/>
+                  forgot password?
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      </>
+        </>
       ) : (
-        <Post  />
+        <Posts />
       )}
     </>
   );

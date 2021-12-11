@@ -14,10 +14,10 @@
 
 .container {
   position: relative;
-  width: 400px;
+  width: 300px;
   height: 530px;
-  border-radius: 20px;
-  padding: 50px;
+  border-radius: 15px;
+  padding: 100px;
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
@@ -51,7 +51,7 @@ input,
 button {
   display: block;
   width: 100%;
-  padding: 0;
+  padding: 30px;
   border: none;
   outline: none;
   box-sizing: border-box;
@@ -73,8 +73,9 @@ input {
 
 button {
   margin-top: 20px;
+  /* margin-bottom: 20px; */
   background: rgb(253, 218, 216);
-  height: 40px;
+  height: 30px;
   border-radius: 20px;
   cursor: pointer;
   font-weight: 900;
@@ -85,3 +86,16 @@ button {
 button:hover {
   box-shadow: none;
 }
+
+
+
+/* .green{
+  font-weight: bold;
+  color: green;
+}
+
+.submit:disabled{
+  cursor: not-allowed;
+  background-color: #dfcdcdb6;
+
+} */

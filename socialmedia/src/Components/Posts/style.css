@@ -1,16 +1,17 @@
 .posts {
     margin-top: 20px;
+    margin-left: 130px;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-gap: 10px;
+    grid-template-columns: 28% 28% 28%;
+    grid-gap: 80px;
     /* background-color: rgb(113,81,80); */
-    padding: 10px;
+    padding: 20px;
 }
 .post {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid black;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 #image{
     width: 100%;

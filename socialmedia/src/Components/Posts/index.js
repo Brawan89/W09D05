@@ -3,18 +3,28 @@ import Navbar from "../Navbar";
 import "./style.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+// import AiTwotoneEdit from "react-icons/ai"
 
-const Post = () => {
+const Posts = () => {
+    const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState("");
   const [updatePost, setUpdatePost] = useState("");
+  const [comments, setComments] = useState([]);
+  
 
   const state = useSelector((state) => {
     return state;
   });
 
+  // const goPost = () => {
+  //   navigate("/onePost")
+  // }
+
   useEffect(() => {
     getAllPosts();
+    // gettAllComment();
   }, []);
 
   const getAllPosts = async () => {
@@ -56,13 +66,11 @@ const Post = () => {
   };
 
   // edit task
-  const updateTask = async (id) => {
+  const updatPost = async (id) => {
     try {
       await axios.put(
         `${process.env.REACT_APP_BASE_URL}/updatePost/${id}`,
         {
-       
-          // img: "https://media.istockphoto.com/vectors/pretty-girl-avatar-flat-cartoon-style-vector-illustration-vector-id1140166223?k=20&m=1140166223&s=170667a&w=0&h=wgeq7igZ8rP0WrzCBGJL70dLF9bPri1nrMXNerQ6kOA=",
           dec: updatePost,
         },
         {
@@ -70,31 +78,76 @@ const Post = () => {
             Authorization: `Bearer ${state.signIn.token}`,
           },
         }
-        
       );
-      updatePost(state.signIn.token);
+      updatPost(state.signIn.token);
     } catch (error) {
       console.log(error);
     }
     window.location.reload(false);
-
   };
 
-   // delete post by id
-   const deleteTask = async (_id) => {
+  // delete post by id
+  const deletePost = async (_id) => {
     try {
-      await axios.delete(`${process.env.REACT_APP_BASE_URL}/deletePost/${_id}`, {
-        headers: {
-          Authorization: `Bearer ${state.signIn.token}`,
-        },
-      });
-      deleteTask(state.signIn.token);
+      await axios.delete(
+        `${process.env.REACT_APP_BASE_URL}/deletePost/${_id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${state.signIn.token}`,
+          },
+        }
+      );
+      deletePost(state.signIn.token);
     } catch (error) {
       console.log(error);
     }
     window.location.reload(false);
-
   };
+
+
+  //comment
+  const gettAllComment = async () => {
+    try {
+      const result = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/getAllComments`,
+        {
+          headers: {
+            Authorization: `Bearer ${state.signIn.token}`,
+          },
+        }
+      );
+      console.log(result);
+      gettAllComment(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+    // window.location.reload(false);
+  };
+
+  const addComment = async (comment , posts) => {
+    try {
+      const result =
+      await axios.put(
+        `${process.env.REACT_APP_BASE_URL}/addComment`,
+        {
+          comment,
+          posts,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${state.signIn.token}`,
+          },
+        }
+      );
+      console.log(result);
+      gettAllComment(state.signIn.token);
+    } catch (error) {
+      console.log(error);
+    }
+    window.location.reload(false);
+  };
+
+  
 
   return (
     <>
@@ -124,7 +177,7 @@ const Post = () => {
             <>
               <div key={item._id}>
                 <div className="post">
-                  <img id="image" src={item.img}></img>
+                  <img id="image" /*onClick={()=> goPost(item._id)}*/ src={item.img}></img>
                   <h2 key={item._id}>{item.dec}</h2>
                   <input
                     type="text"
@@ -132,12 +185,30 @@ const Post = () => {
                       setUpdatePost(val.target.value);
                     }}
                   />
-                  <button onClick={() => updateTask(item._id)}>
+
+                  <button onClick={() => updatPost(item._id)}>
                     {" "}
                     update Your Post{" "}
                   </button>
-                  <button onClick={() => deleteTask(item._id)}>Delete</button>
 
+                  <button onClick={() => deletePost(item._id)}>Delete</button>
+                  {/* <h2 key={item._id}>{item.comment}</h2> */}
+                  {comments.map((cont) => (
+                    <h6>
+                      {cont.comment}
+                    </h6>
+                  ))}
+                  
+                  <form onSubmit={(e) => {
+                    e.preventDefault()
+                    console.log("comment ", e.target[0].value, item._id);
+
+                    addComment(e.target[0].value, item._id)
+                    
+                  }} >
+                    <input type="text" placeholder="add comment" />
+
+                  </form>
                 </div>
               </div>
             </>
@@ -146,4 +217,4 @@ const Post = () => {
     </>
   );
 };
-export default Post;
+export default Posts;
