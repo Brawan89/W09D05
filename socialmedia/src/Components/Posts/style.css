@@ -1,18 +1,39 @@
 .posts {
     margin-top: 20px;
-    margin-left: 130px;
+    margin-left: 115px;
+    margin-bottom: 50px;
     display: grid;
     grid-template-columns: 28% 28% 28%;
-    grid-gap: 80px;
+    grid-gap: 40px;
     /* background-color: rgb(113,81,80); */
-    padding: 20px;
+    padding: 10px;
+    /* max-height: 50px; */
+
 }
 .post {
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid black;
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
 }
 #image{
-    width: 100%;
+    width: 50%;
+}
+
+progress{
+    width: 85%;
+}
+textarea{
+    width: 85%;
+}
+.add{
+    width: 85%;
+    /* color: rgb(197, 175, 173); */
+}
+
+.bin{
+    display: inline-block;
+}
+.bin .bn{
+    display: inline;
 }

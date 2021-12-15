@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import "./style.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import validator from "validator";
 import zxcvbn from "zxcvbn";
 import generator from "generate-password";
 import axios from "axios";
+import { active } from "../../reducers/auth";
+import { useDispatch } from "react-redux";
 
 const Register = () => {
-  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
 
   // function register
   const register = async () => {
@@ -22,16 +22,15 @@ const Register = () => {
           userName,
           email,
           password,
-          role: "61b0a2dada0dc03b9e2f2f70",
+          role: "61b0a2b9da0dc03b9e2f2f6e",
         }
       );
       console.log(result);
-      navigate("/login");
     } catch (error) {
       console.log(error);
     }
   };
- 
+
 
   //stronge pass
   const testResult = zxcvbn(password);
@@ -117,7 +116,12 @@ const Register = () => {
               <button onClick={register} style={{ color: "rgb(106,73,70)" }}>
                 Register
               </button>
-             
+              <p>
+                Do you already have an account?
+                <span>
+                  <Link to="/login">Login</Link>
+                </span>
+              </p>
             </div>
           </div>
         </div>

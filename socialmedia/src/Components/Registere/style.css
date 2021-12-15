@@ -14,10 +14,10 @@
 
 .container {
   position: relative;
-  width: 300px;
-  height: 530px;
+  width: 50px;
+  height: 430px;
   border-radius: 15px;
-  padding: 100px;
+  padding: 10px;
   box-sizing: border-box;
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
@@ -51,7 +51,7 @@ input,
 button {
   display: block;
   width: 100%;
-  padding: 30px;
+  padding: 0;
   border: none;
   outline: none;
   box-sizing: border-box;
@@ -72,7 +72,7 @@ input {
 }
 
 button {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   /* margin-bottom: 20px; */
   background: rgb(253, 218, 216);
   height: 30px;
