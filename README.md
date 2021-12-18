@@ -15,5 +15,14 @@
 4. Forgot Password.
 5. Reset Password.
 
+## Home Page:
+![Screenshot (315)](https://user-images.githubusercontent.com/92247926/146654580-684d28b4-0970-4947-9fe1-627b58463200.png)
+
+## User Page:
+![Screenshot (317)](https://user-images.githubusercontent.com/92247926/146654585-dfcd4ab4-473c-4e04-b591-b30a07f17fc1.png)
+
+
 ## UML Diagram:
-![Screenshot (306)](https://user-images.githubusercontent.com/92247926/146636938-5f8cf99d-bb01-4d3e-9fe5-9e183d800d3c.png)
+![Screenshot (316)](https://user-images.githubusercontent.com/92247926/146654574-7ad3aeac-8e39-48a1-b4f0-dfdb685c4fb8.png)
+
+
