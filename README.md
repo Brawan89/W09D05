@@ -19,7 +19,8 @@
 ![Screenshot (315)](https://user-images.githubusercontent.com/92247926/146654580-684d28b4-0970-4947-9fe1-627b58463200.png)
 
 ## User Page:
-![Screenshot (317)](https://user-images.githubusercontent.com/92247926/146654585-dfcd4ab4-473c-4e04-b591-b30a07f17fc1.png)
+![Screenshot (317)](https://user-images.githubusercontent.com/92247926/146654600-76230a6b-78de-4d4c-a092-bb90f73c1f68.png)
+
 
 
 ## UML Diagram:
