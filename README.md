@@ -19,7 +19,8 @@
 ![Screenshot (315)](https://user-images.githubusercontent.com/92247926/146654580-684d28b4-0970-4947-9fe1-627b58463200.png)
 
 ## User Page:
-![Screenshot (317)](https://user-images.githubusercontent.com/92247926/146654600-76230a6b-78de-4d4c-a092-bb90f73c1f68.png)
+![Screenshot (317)](https://user-images.githubusercontent.com/92247926/146654625-42e39dde-e6c7-45b0-88f1-004e02778eec.png)
+
 
 
 
