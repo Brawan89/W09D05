@@ -68,7 +68,7 @@ const Posts = () => {
   const getAllPosts = async () => {
     try {
       const result = await axios.get(
-        `${process.env.REACT_APP_BASE_URL}/getAllPosts`,
+        `${process.env.REACT_APP_BASE_URL}/getPost`,
         {
           headers: {
             Authorization: `Bearer ${state.signIn.token}`,
@@ -144,23 +144,23 @@ const Posts = () => {
   };
 
   //comment
-  // const gettAllComment = async () => {
-  //   try {
-  //     const result = await axios.get(
-  //       `${process.env.REACT_APP_BASE_URL}/getAllComments`,
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${state.signIn.token}`,
-  //         },
-  //       }
-  //     );
-  //     console.log(result);
-  //     gettAllComment(result.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  //   // window.location.reload(false);
-  // };
+  const gettAllComment = async () => {
+    try {
+      const result = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/getAllComments`,
+        {
+          headers: {
+            Authorization: `Bearer ${state.signIn.token}`,
+          },
+        }
+      );
+      console.log(result);
+      gettAllComment(result.data);
+    } catch (error) {
+      console.log(error);
+    }
+    // window.location.reload(false);
+  };
 
   //   const addComment = async (id) => {
   //       const result = await axios.post(
@@ -180,25 +180,7 @@ const Posts = () => {
   // getAllPosts();
   // window.location.reload(false);
   // };
-  // const likePost = async (_id) => {
-  //   await axios.put(
-  //     `${process.env.REACT_APP_BASE_URL}/addLikes/${posts}}`,
-  //     {
-  //       like: _id,
-  //     },
-  //     {
-  //       headers: {
-  //         Authorization: `Bearer ${state.signIn.token}`,
-  //       },
-  //     }
-  //   );
-
-  //   if (_id) setLike(true);
-  //   else setLike(false);
-
-  // };
-  //
-
+  
   //   const like = async (_id) => {
   //     try {
   //       console.log("id", _id);
@@ -326,16 +308,16 @@ const Posts = () => {
                   >
                     Delete
                   </button>
-                  {/* <h2 key={item._id}>{item.comment}</h2> */}
-                  {/*           
-                     <textarea
+                  <h2 key={item._id}>{item.comment}</h2>
+                            
+                     {/* <textarea
                      id="shareCommentText"
                      placeholder="Write a comment.."
                    ></textarea>
                     <button className="shareCommentButton" onClick={() => addComment(item._id)}>
                      add comment
                    </button> */}
-                  {/* // <h6>{cont.comment}</h6> */}
+                  {/* <h6>{cont.comment}</h6> */}
 
                   {/* <form
                     onSubmit={(e) => {
@@ -345,17 +327,16 @@ const Posts = () => {
                       addComment(e.target[0].value, item._id);
                     }}
                   >
-                    <input type="text" placeholder="add comment" /> */}
+                    <input type="text" placeholder="add comment" />
 
-                  {/* <MdFavorite
+                  <MdFavorite
                       className="likeIcon"
-                      onClick={() => like(item._id)} */}
-                  {/* // className={lik ? "showl" : "disabled"} */}
-                  {/* // className={unlik ? "show" : "disabled"} */}
+                      onClick={() => like(item._id)}
+                  className={lik ? "showl" : "disabled"} 
 
-                  {/* // /> */}
+                   /> 
 
-                  {/* </form> */}
+                </form>  */}
                 </div>
               </div>
             </>

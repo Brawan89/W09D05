@@ -9,6 +9,7 @@ import { AiFillGoogleSquare } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 
 const Login = () => {
+  const navigate = useNavigate();
 
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -38,6 +39,11 @@ const Login = () => {
 
         console.log(result);
         dispatch(log(data))
+        if(result.data.result.role.role === "admin"){
+          navigate("/users");
+        } else{
+        navigate("/posts");
+        }
 
       } catch (error) {
         console.log(error);
